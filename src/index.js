@@ -1,14 +1,31 @@
+// import React from "react";
+// import ReactDOM from "react-dom";
+//
+// import "./styles.css"
+//
+// document.addEventListener( "DOMContentLoaded", () => {
+// 	const reactNode = document.getElementById( "react-node" );
+//
+//     if ( reactNode ) {
+//         ReactDOM.render(
+//             <h1>Hello from index.js!</h1>
+//             , reactNode )
+//     }
+// } );
+
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./styles.css"
+import "./styles.css";
+
+import App from "./components/App";
 
 document.addEventListener( "DOMContentLoaded", () => {
 	const reactNode = document.getElementById( "react-node" );
 
-    if ( reactNode ) {
-        ReactDOM.render(
-            <h1>Hello from index.js!</h1>
-            , reactNode )
-    }
+	if ( reactNode ) {
+		ReactDOM.render(
+			<App />
+		, reactNode );
+	}
 } );
