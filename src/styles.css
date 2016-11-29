@@ -7,14 +7,31 @@ body {
 .margin-bottom-10 {
     margin-bottom: 10px !important;
 }
-.new-post-wrapper {
+.header h1 {
+    top: -155px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: #1ab188;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+}
+.new-note-wrapper, .note-wrapper {
     width: 90%;
-    margin: 8% auto;
+    margin-top: 8%;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
     background: #fff;
     position: relative;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
-.new-post {
+.note-wrapper {
+  margin: 10px auto;
+}
+.new-note, .note {
     position: relative;
     margin: 0;
     width: 100%;
@@ -30,6 +47,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+}
+.note {
+  width: 90%;
+  margin: 20px auto;
 }
 input, textarea {
     outline: none;
@@ -49,7 +70,7 @@ input, textarea {
     -webkit-transition: border-color .25s ease, box-shadow .25s ease;
     transition: border-color .25s ease, box-shadow .25s ease;
 }
-.new-post-wrapper input {
+.new-note-wrapper input {
     width: 90%;
     height: 1.5em;
     font-size: 1.25em;
@@ -58,7 +79,7 @@ input, textarea {
     display: block;
     border-bottom: 2px solid #1ab188;
 }
-.new-post-wrapper textarea {
+.new-note-wrapper textarea {
     margin: 0 auto;
     width: 90%;
     height: 150px;
@@ -83,7 +104,11 @@ input, textarea {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-appearance: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 .btn--newpost:hover, .btn--newpost:focus {
     background: #179b77;
+}
+.btn--newpost:active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 10px 30px 0 rgba(0, 0, 0, 0.8);
 }

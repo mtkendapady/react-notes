@@ -1,48 +1,51 @@
 import React from "react";
 
-import NewPostForm from "./NewToDoForm";
-import Post from "./ToDo";
+import NewNoteForm from "./NewNoteForm";
+import Note from "./Note";
 
 export default class App extends React.Component {
 	constructor( props ) {
 		super( props );
 
 		this.state = {
-			posts: []
-			, showNewPostForm: false
+			notes: []
+			, showNewNoteForm: false
 		};
 	}
 
-	saveNewPost( postTitle, postContent ) {
+	saveNewNote( postTitle, postContent ) {
 		this.setState( {
-			posts: [ ...this.state.posts, { postTitle, postContent } ]
+			notes: [ ...this.state.notes, { postTitle, postContent } ]
 		} );
 
-		this.toggleNewPostForm();
+		this.toggleNewNoteForm();
 	}
 
-	toggleNewPostForm() {
-		this.setState( { showNewPostForm: !this.state.showNewPostForm } );
+	toggleNewNoteForm() {
+		this.setState( { showNewNoteForm: !this.state.showNewNoteForm } );
 	}
 
 	render() {
-		const posts = this.state.posts.map( ( post, index ) => (
-			<Post
-				content={ post.postContent }
+		const notes = this.state.notes.map( ( note, index ) => (
+			<Note
+				content={ note.postContent }
 				key={ index }
-				title={ post.postTitle }
+				title={ note.postTitle }
 			/>
 		) );
 
 		return (
 			<div>
-				{ this.state.showNewPostForm
+      <div className="header">
+        <h1>Notes</h1>
+      </div>
+				{ this.state.showNewNoteForm
 					?
-						<NewPostForm saveNewPost={ this.saveNewPost.bind( this ) } />
+						<NewNoteForm saveNewNote={ this.saveNewNote.bind( this ) } />
 					:
-						<button className="btn--newpost" onClick={ this.toggleNewPostForm.bind( this ) }>New Post</button>
+						<button className="btn--newpost" onClick={ this.toggleNewNoteForm.bind( this ) }>New Note</button>
 				}
-				{ posts }
+				{ notes }
 			</div>
 		);
 	}
